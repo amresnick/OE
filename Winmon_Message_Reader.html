@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="en"><head> <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="docstyle.css" type="text/css">
+</head>
+<body><h3 class="title">
+Winmon Message Reader</h3>
+<p>
+Replay the time-tagged Mitel messages output by the Phoenix receiver and stored in a log file.</p>
+<h4 class="title">
+Description</h4>
+<img src="pictures/Winmon_Message_Reader_block.png" alt="block overview"/>
+<p>
+Since the Phoenix GPS receiver communicates with ASCII messages, a "string" stream has been introduced within the Simulink environment. The "string" data type is composed of a pointer to an existing string buffer (allocated in the memory by the block) and of the length of the string to be read when the block is called. The blocks writes all the messages found at GPS time t, specified as input, into the string buffers. If the time of the message does not match exactly the input time, the blocks writes all the messages arrived since the last call of the block. </p>
+<p>
+Reference:</p>
+<ul>
+<li>Montenbruck O., Markgraf M.; User's Manual for the Phoenix GPS Receiver; v 1.9 (2008).</ul>
+<h4 class="title">
+Parameters and Dialog Box</h4>
+<table cellspacing="0" class="body" cellpadding="4" border="2">
+<thead>
+<tr>
+<th bgcolor="#F2F2F2">Name</th>
+<th bgcolor="#F2F2F2">Description</th>
+</tr>
+</thead>
+<tr>
+<td bgcolor="#F2F2F2">
+Winmon filename</td>
+<td bgcolor="#F2F2F2">
+path to the name of the file comprising the Mitel messages</td>
+</tr><tr>
+<td bgcolor="#F2F2F2">
+Sample time</td>
+<td bgcolor="#F2F2F2">
+sample time of the block</td>
+</tr><tr>
+<td bgcolor="#F2F2F2">
+Verbose</td>
+<td bgcolor="#F2F2F2">
+display additional information when running</td>
+</tr></table>
+<h4 class="title">
+Inputs and Outputs</h4>
+<table cellspacing="0" class="body" cellpadding="4" border="2">
+<caption><b>
+Overview of the block inputs</b></caption>
+<thead>
+<tr>
+<th bgcolor="#F2F2F2">Name</th>
+<th bgcolor="#F2F2F2">Format</th>
+<th bgcolor="#F2F2F2">Description</th>
+</tr>
+</thead>
+<tr>
+<td bgcolor="#F2F2F2">
+t</td>
+<td bgcolor="#F2F2F2">
+1x2 double</td>
+<td bgcolor="#F2F2F2">
+desired time in GPS time format [GPS weeks, seconds of week]</td>
+</tr></table>
+<table cellspacing="0" class="body" cellpadding="4" border="2">
+<caption><b>
+Overview of the block outputs</b></caption>
+<thead>
+<tr>
+<th bgcolor="#F2F2F2">Name</th>
+<th bgcolor="#F2F2F2">Format</th>
+<th bgcolor="#F2F2F2">Description</th>
+</tr>
+</thead>
+<tr>
+<td bgcolor="#F2F2F2">
+msg address</td>
+<td bgcolor="#F2F2F2">
+1x1 uint32</td>
+<td bgcolor="#F2F2F2">
+address in the memory to the string buffer allocated within the block</td>
+</tr><tr>
+<td bgcolor="#F2F2F2">
+msg length</td>
+<td bgcolor="#F2F2F2">
+1x1 uint32</td>
+<td bgcolor="#F2F2F2">
+length of the buffer to be read by other blocks</td>
+</tr></table>
+</body>

@@ -1,0 +1,13 @@
+%
+%    Mex file for PRISMA GIF flight software embedded in Simulink
+%
+%    2009/10/09  SDA created
+%
+
+arguments = ['-I"' lib_path '" '         ...
+             'gif.c gif_wrapper.cpp '    ...
+             lib_path '\DLR_String.cpp '  ...
+             lib_path '\DLR_GPS_Time.cpp '...
+             lib_path '\DLR_GIF.cpp '];
+
+eval( ['mex -v ' arguments]);

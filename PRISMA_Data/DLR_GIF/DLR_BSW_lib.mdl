@@ -1,0 +1,845 @@
+Library {
+  Name			  "DLR_BSW_lib"
+  Version		  6.3
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Mon Dec 04 13:35:05 2006"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "DAMICO"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Oct 09 13:20:30 2009"
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "Warning"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      DataStoreMemory
+      ReadBeforeWriteMsg      "none"
+      WriteAfterWriteMsg      "none"
+      WriteAfterReadMsg	      "none"
+      StateMustResolveToSignalObject off
+      ShowAdditionalParam     off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      ShowOutputPort	      off
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "DLR_BSW_lib"
+    Location		    [314, 157, 1088, 904]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "80"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "DLR_BSW_lib"
+      Ports		      [7, 11]
+      Position		      [385, 247, 625, 653]
+      AttributesFormatString  "Priority=%<Priority>"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      SystemSampleTime	      "1.0"
+      RTWSystemCode	      "Function"
+      RTWFcnNameOpts	      "User specified"
+      RTWFcnName	      "dlr_bsw_rtw"
+      RTWFileNameOpts	      "Use function name"
+      MaskHideContents	      off
+      System {
+	Name			"DLR_BSW_lib"
+	Location		[55, 91, 1316, 743]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"80"
+	Block {
+	  BlockType		  Inport
+	  Name			  "TC_DLR_GIF"
+	  Position		  [120, 213, 150, 227]
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "8"
+	  DataType		  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "enableFunction_DLR_GIF"
+	  Position		  [120, 138, 150, 152]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "1"
+	  DataType		  "boolean"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "GNC_SCET"
+	  Position		  [120, 273, 150, 287]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "2"
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "GPS_msg_adr_MAIN"
+	  Position		  [120, 333, 150, 347]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "1"
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "GPS_msg_len_MAIN"
+	  Position		  [120, 393, 150, 407]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "1"
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "GPS_msg_adr_TARGET"
+	  Position		  [120, 453, 150, 467]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "1"
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "GPS_msg_len_TARGET"
+	  Position		  [120, 513, 150, 527]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "1"
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  DataStoreMemory
+	  Name			  "Data Store\nMemory"
+	  Position		  [35, 760, 165, 794]
+	  ShowName		  off
+	  DataStoreName		  "BSW_DLR_version_t"
+	  InitialValue		  "BSW_DLR_version_t"
+	  RTWStateStorageClass	  "Auto"
+	  VectorParams1D	  on
+	  ShowAdditionalParam	  off
+	  DataType		  "uint8"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "GIF"
+	  Ports			  [6, 11, 1]
+	  Position		  [605, 195, 975, 545]
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "GIF"
+	    Location		    [77, 226, 798, 838]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "TC_DLR_GIF"
+	      Position		      [75, 243, 105, 257]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "GNC_SCET"
+	      Position		      [70, 303, 100, 317]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "GPS_msg_adr_MAIN"
+	      Position		      [70, 363, 100, 377]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "GPS_msg_len_MAIN"
+	      Position		      [70, 423, 100, 437]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "GPS_msg_adr_TARGET"
+	      Position		      [70, 483, 100, 497]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "GPS_msg_len_TARGET"
+	      Position		      [70, 543, 100, 557]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      EnablePort
+	      Name		      "Enable"
+	      Ports		      []
+	      Position		      [310, 25, 330, 45]
+	      StatesWhenEnabling      "reset"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "GIF \"memory\""
+	      Position		      [300, 93, 335, 127]
+	      Orientation	      "left"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "gif"
+	      Ports		      [7, 12]
+	      Position		      [215, 153, 455, 582]
+	      FunctionName	      "gif"
+	      MaskDisplay	      "port_label('input',1,'MEM_in')\nport_la"
+"bel('input',2,'TC_DLR_GIF')\nport_label('input',3,'GPS_TIME')\nport_label('in"
+"put',4,'GPS_msg_adr_MAIN')\nport_label('input',5,'GPS_msg_len_MAIN')\nport_la"
+"bel('input',6,'GPS_msg_adr_TARGET')\nport_label('input',7,'GPS_msg_len_TARGET"
+"')\nport_label('output',1,'MEM_out')\nport_label('output',2,'TSync')\nport_la"
+"bel('output',3,'DLR_GPS_Obs_Time')\nport_label('output',4,'DLR_GPS_UTC')\npor"
+"t_label('output',5,'DLR_GPS_MAIN_OBS')\nport_label('output',6,'DLR_GPS_TARGET"
+"_OBS')\nport_label('output',7,'DLR_GPS_EPH')\nport_label('output',8,'DLR_TM_G"
+"IF')\nport_label('output',9,'ReqTE_MAIN')\nport_label('output',10,'ReqTE_TARG"
+"ET')\nport_label('output',11,'GPS_Status_MAIN')\nport_label('output',12,'GPS_"
+"Status_TARGET')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "TSync"
+	      Position		      [610, 203, 640, 217]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DLR_GPS_Obs_Time"
+	      Position		      [610, 238, 640, 252]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DLR_GPS_UTC"
+	      Position		      [610, 273, 640, 287]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DLR_GPS_MAIN_OBS"
+	      Position		      [610, 308, 640, 322]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DLR_GPS_TARGET_OBS"
+	      Position		      [610, 343, 640, 357]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DLR_GPS_EPH"
+	      Position		      [610, 378, 640, 392]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DLR_TM_GIF"
+	      Position		      [610, 413, 640, 427]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ReqTE_MAIN"
+	      Position		      [610, 448, 640, 462]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ReqTE_TARGET"
+	      Position		      [605, 483, 635, 497]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "GPS_Status_MAIN"
+	      Position		      [605, 518, 635, 532]
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "GPS_Status_TARGET"
+	      Position		      [605, 553, 635, 567]
+	      Port		      "11"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "GPS_msg_len_TARGET"
+	      SrcPort		      1
+	      DstBlock		      "gif"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "GPS_msg_adr_TARGET"
+	      SrcPort		      1
+	      DstBlock		      "gif"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      2
+	      DstBlock		      "TSync"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      3
+	      DstBlock		      "DLR_GPS_Obs_Time"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      4
+	      DstBlock		      "DLR_GPS_UTC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      5
+	      DstBlock		      "DLR_GPS_MAIN_OBS"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      6
+	      DstBlock		      "DLR_GPS_TARGET_OBS"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      7
+	      DstBlock		      "DLR_GPS_EPH"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      8
+	      DstBlock		      "DLR_TM_GIF"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      9
+	      DstBlock		      "ReqTE_MAIN"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      10
+	      DstBlock		      "ReqTE_TARGET"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      11
+	      DstBlock		      "GPS_Status_MAIN"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      12
+	      DstBlock		      "GPS_Status_TARGET"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GPS_msg_len_MAIN"
+	      SrcPort		      1
+	      DstBlock		      "gif"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "GPS_msg_adr_MAIN"
+	      SrcPort		      1
+	      DstBlock		      "gif"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "GNC_SCET"
+	      SrcPort		      1
+	      DstBlock		      "gif"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "TC_DLR_GIF"
+	      SrcPort		      1
+	      DstBlock		      "gif"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "GIF \"memory\""
+	      SrcPort		      1
+	      Points		      [-100, 0; 0, 80]
+	      DstBlock		      "gif"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "gif"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -65]
+	      DstBlock		      "GIF \"memory\""
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DLR_TM_GIF"
+	  Position		  [1465, 393, 1495, 407]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "5"
+	  DataType		  "uint8"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TC_DLR_GPS_MAIN"
+	  Position		  [1465, 423, 1495, 437]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "8"
+	  DataType		  "uint8"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TC_DLR_GPS_TARGET"
+	  Position		  [1465, 453, 1495, 467]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "8"
+	  DataType		  "uint8"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "GPS_Status_MAIN"
+	  Position		  [1465, 483, 1495, 497]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "1"
+	  DataType		  "uint8"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "GPS_Status_TARGET"
+	  Position		  [1465, 513, 1495, 527]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "1"
+	  DataType		  "uint8"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TSync"
+	  Position		  [1465, 213, 1495, 227]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "2"
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DLR_GPS_Obs_Time"
+	  Position		  [1465, 243, 1495, 257]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "2"
+	  DataType		  "uint32"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DLR_GPS_MAIN_OBS"
+	  Position		  [1465, 303, 1495, 317]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "69"
+	  DataType		  "double"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DLR_GPS_TARGET_OBS"
+	  Position		  [1465, 333, 1495, 347]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "69"
+	  DataType		  "double"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DLR_GPS_EPH"
+	  Position		  [1465, 363, 1495, 377]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "992"
+	  DataType		  "double"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DLR_GPS_UTC"
+	  Position		  [1465, 273, 1495, 287]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  PortDimensions	  "1"
+	  DataType		  "uint8"
+	}
+	Line {
+	  SrcBlock		  "TC_DLR_GIF"
+	  SrcPort		  1
+	  DstBlock		  "GIF"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "enableFunction_DLR_GIF"
+	  SrcPort		  1
+	  Points		  [635, 0]
+	  DstBlock		  "GIF"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "GPS_msg_adr_MAIN"
+	  SrcPort		  1
+	  DstBlock		  "GIF"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "GPS_msg_len_MAIN"
+	  SrcPort		  1
+	  DstBlock		  "GIF"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "GPS_msg_adr_TARGET"
+	  SrcPort		  1
+	  DstBlock		  "GIF"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "GPS_msg_len_TARGET"
+	  SrcPort		  1
+	  DstBlock		  "GIF"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "GNC_SCET"
+	  SrcPort		  1
+	  DstBlock		  "GIF"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  7
+	  DstBlock		  "DLR_TM_GIF"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  8
+	  DstBlock		  "TC_DLR_GPS_MAIN"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  9
+	  DstBlock		  "TC_DLR_GPS_TARGET"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  10
+	  DstBlock		  "GPS_Status_MAIN"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  11
+	  DstBlock		  "GPS_Status_TARGET"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  1
+	  DstBlock		  "TSync"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  2
+	  DstBlock		  "DLR_GPS_Obs_Time"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  3
+	  DstBlock		  "DLR_GPS_UTC"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  4
+	  DstBlock		  "DLR_GPS_MAIN_OBS"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  5
+	  DstBlock		  "DLR_GPS_TARGET_OBS"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GIF"
+	  SrcPort		  6
+	  DstBlock		  "DLR_GPS_EPH"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}
