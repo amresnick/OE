@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.14"
+    ComputedModelVersion    "1.17"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [2406.0, 183.0, 816.0, 539.0]
+      Location		      [507.0, 129.0, 816.0, 539.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,8 +55,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[573.0, 394.0]
-	ZoomFactor		[1.0]
-	Offset			[62.630963326594213, -69.472477064220158]
+	ZoomFactor		[1.25]
+	Offset			[9.230963326594491, -34.302475819675237]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Adam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jul 23 12:48:54 2014"
-  RTWModifiedTimeStamp	  328020278
-  ModelVersionFormat	  "1.%<AutoIncrement:14>"
+  LastModifiedDate	  "Fri Aug 01 11:57:53 2014"
+  RTWModifiedTimeStamp	  328795073
+  ModelVersionFormat	  "1.%<AutoIncrement:17>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -106,7 +106,7 @@ Model {
     $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "winmonReader"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -171,7 +171,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StopTime		  "20000"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -772,11 +772,56 @@ Model {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
       BlockType		      S-Function
       FunctionName	      "system"
       SFunctionModules	      "''"
       PortCounts	      "[]"
       SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      ToWorkspace
@@ -791,7 +836,7 @@ Model {
   }
   System {
     Name		    "winmonReader"
-    Location		    [2406, 183, 3222, 722]
+    Location		    [507, 129, 1323, 668]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -803,34 +848,111 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "10"
+    SIDHighWatermark	    "16"
+    Block {
+      BlockType		      Reference
+      Name		      "Counter"
+      SID		      "11"
+      Ports		      [0, 1]
+      Position		      [20, 165, 90, 225]
+      ZOrder		      49
+      LibraryVersion	      "1.225"
+      SourceBlock	      "dspswit3/Counter"
+      SourceType	      "Counter"
+      Direction		      "Up"
+      CountEvent	      "Free running"
+      CounterSize	      "User defined"
+      MaxCount		      "20000"
+      InitialCount	      "0"
+      Output		      "Count"
+      HitValue		      "32"
+      ResetInput	      off
+      SamplesPerFrame	      "1"
+      Ts		      "10"
+      CntDtype		      "double"
+      HitDtype		      "Logical"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      SID		      "12"
+      Ports		      [1, 2]
+      Position		      [230, 113, 235, 177]
+      ZOrder		      51
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "13"
+      Position		      [175, 180, 205, 210]
+      ZOrder		      50
+      Gain		      "10"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
     Block {
       BlockType		      Constant
-      Name		      "Constant"
-      SID		      "10"
-      Position		      [150, 102, 215, 138]
-      ZOrder		      9
-      Value		      "GPS_time"
+      Name		      "Input_Time\n"
+      SID		      "14"
+      Position		      [75, 30, 105, 60]
+      ZOrder		      48
+      Value		      "epoch"
+      OutDataTypeStr	      "double"
+      Port {
+	PortNumber		1
+	Name			"TIME"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      SID		      "15"
+      Ports		      [2, 1]
+      Position		      [370, 115, 375, 175]
+      ZOrder		      53
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
     }
     Block {
       BlockType		      S-Function
       Name		      "S-Function"
       SID		      "6"
       Ports		      [1, 2]
-      Position		      [270, 80, 370, 160]
+      Position		      [500, 55, 695, 230]
       ZOrder		      5
       FunctionName	      "winmon_reader"
-      Parameters	      "fileName,dt,1"
+      Parameters	      "filename_main,dt,VERBOSE"
       EnableBusSupport	      off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      "16"
+      Ports		      [2, 1]
+      Position		      [290, 150, 310, 170]
+      ZOrder		      52
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace"
       SID		      "4"
       Ports		      [1]
-      Position		      [455, 85, 515, 115]
+      Position		      [785, 110, 845, 140]
       ZOrder		      3
       VariableName	      "msg_addr"
       MaxDataPoints	      "inf"
@@ -841,7 +963,7 @@ Model {
       Name		      "To Workspace1"
       SID		      "7"
       Ports		      [1]
-      Position		      [455, 140, 515, 170]
+      Position		      [785, 165, 845, 195]
       ZOrder		      6
       VariableName	      "msg_length"
       MaxDataPoints	      "inf"
@@ -850,18 +972,59 @@ Model {
     Line {
       SrcBlock		      "S-Function"
       SrcPort		      1
+      Points		      [70, 0]
       DstBlock		      "To Workspace"
       DstPort		      1
     }
     Line {
       SrcBlock		      "S-Function"
       SrcPort		      2
-      Points		      [65, 0]
+      Points		      [40, 0; 0, -5]
       DstBlock		      "To Workspace1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Constant"
+      Name		      "TIME"
+      Labels		      [0, 0]
+      SrcBlock		      "Input_Time\n"
+      SrcPort		      1
+      Points		      [61, 0; 0, 100]
+      DstBlock		      "Demux"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Counter"
+      SrcPort		      1
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      Points		      [90, 0]
+      DstBlock		      "Sum1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      2
+      DstBlock		      "Sum1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux"
       SrcPort		      1
       DstBlock		      "S-Function"
       DstPort		      1
