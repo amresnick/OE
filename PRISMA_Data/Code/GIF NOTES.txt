@@ -1,0 +1,6 @@
+GIF NOTES
+
+What time is supposed to go into the GIF simulink block?
+Ok, so in gif_wrapper.cpp line 234,  there is
+    t = GPStime(GPS_TIME[0],GPS_TIME[1])
+and in DLR_GPS_TIME.cpp, there seem to be 2 methods, one of which is GPS_TIME(int gps_week,double gps_tow) and other one is  GPStime(unsigned int intsec, unsigned int musec) . But this is the wrong file. Looking in GPS_Time.c, we can see that it's the former.
